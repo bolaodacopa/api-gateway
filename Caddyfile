@@ -1,0 +1,29 @@
+{
+        http_port 8083
+        https_port 8083
+
+        order authorize before respond
+
+        security {
+
+                authorization policy default_authz_policy {
+                        crypto key verify from file bolao.pem
+                        validate bearer header
+                        allow roles *
+                        disable auth redirect
+                        inject headers with claims
+                }
+        }
+}
+
+:8083 {
+        route /authzproxy* {
+                authorize with default_authz_policy
+                respond "teste"
+        }
+
+        route /teste* {
+               authorize with default_authz_policy
+                reverse_proxy :8080
+        }
+}
