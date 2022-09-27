@@ -17,12 +17,12 @@
 }
 
 :8083 {
-        route /authzproxy* {
+        route /api/authzproxy* {
                 authorize with default_authz_policy
                 respond "teste"
         }
 
-        route /teste* {
+        route /api/teste* {
                authorize with default_authz_policy
                 reverse_proxy :8080
         }
