@@ -24,6 +24,6 @@
 
         route /api/teste* {
                authorize with default_authz_policy
-                reverse_proxy :8080
+                reverse_proxy 10.0.5.2:8080
         }
 }
