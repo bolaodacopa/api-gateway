@@ -26,8 +26,4 @@
                authorize with default_authz_policy
                 reverse_proxy 10.0.5.2:8080
         }
-        
-        route /api/auth/* {
-                reverse_proxy 10.0.5.2:8081
-        }
 }
