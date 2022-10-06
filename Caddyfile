@@ -19,7 +19,7 @@
 :8083 {
         route {
                authorize with default_authz_policy
-               reverse_proxy /api/teste* 10.0.5.2:8080
+               reverse_proxy /api/teste* 10.0.5.2:9090
                reverse_proxy /api/teams* 10.0.5.2:8082
                reverse_proxy /api/teams/* 10.0.5.2:8082
                respond /api/authzproxy* "teste"
