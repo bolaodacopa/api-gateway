@@ -22,6 +22,12 @@
                reverse_proxy /api/teste* 10.0.5.2:9090
                reverse_proxy /api/teams* 10.0.5.2:8082
                reverse_proxy /api/teams/* 10.0.5.2:8082
+               reverse_proxy /api/matches* 10.0.5.2:8083
+               reverse_proxy /api/matches/* 10.0.5.2:8083
+               reverse_proxy /api/bets* 10.0.5.2:8084
+               reverse_proxy /api/bets/* 10.0.5.2:8084
+               reverse_proxy /api/stages* 10.0.5.2:8084
+               reverse_proxy /api/stages/* 10.0.5.2:8084			   
                respond /api/authzproxy* "teste"
                respond 404
         }
